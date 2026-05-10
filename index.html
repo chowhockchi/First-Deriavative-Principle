@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Principles Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>First <span>Derivative</span> Principle</h1>
+        </div>
+
+        <div class="controls-panel">
+            <div class="input-row">
+                <div class="input-group">
+                    <label>a = </label>
+                    <input type="text" id="inputA" value="1">
+                </div>
+                <div class="input-group">
+                    <label>n = </label>
+                    <input type="text" id="inputN" value="2">
+                </div>
+                <button id="updateFuncBtn">Set Function</button>
+            </div>
+
+            <div class="zoom-controls">
+                <strong>Graph View: </strong>
+                <button id="btnZoomIn" class="action-btn">➕ Zoom In</button>
+                <button id="btnZoomOut" class="action-btn">➖ Zoom Out</button>
+                <button id="btnReset" class="action-btn">🔄 Reset</button>
+            </div>
+
+            <div class="slider-group">
+                <label>
+                    <strong>δx (Increment) = <span id="dxValue" class="highlight">1.000</span></strong>
+                </label>
+                <input type="range" id="dxSlider" min="-2" max="2" step="0.001" value="1">
+            </div>
+            <p class="instruction">👉 <strong>Click on the curve</strong> to set point P(x, f(x)).</p>
+        </div>
+
+        <div class="main-content">
+            <div class="graph-section">
+                <canvas id="fpdChart"></canvas>
+            </div>
+
+            <div class="info-section">
+                <div class="info-card formula-card">
+                    <h3>First Principle Formula</h3>
+                    <div class="math-flex-box">
+                        <span class="math-text">f'(x) = </span>
+                        <div class="limit-box">
+                            <span class="lim-text">lim</span>
+                            <span class="lim-sub">δx→0</span>
+                        </div>
+                        <div class="fraction-box">
+                            <div class="numerator">f(x + δx) - f(x)</div>
+                            <div class="denominator">δx</div>
+                        </div>
+                    </div>
+
+                    <div class="math-flex-box deriv-box" style="margin-top: 15px;">
+                        <span class="math-text">f'(x) = <span id="derivEq">?</span></span>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Secant Line (Connecting 2 Points)</h3>
+                    <p id="pointP">Point P(x, f(x)): ?</p>
+                    <p id="pointQ">Point Q(x+δx, f(x+δx)): ?</p>
+                    <div class="math-box" id="secantEq" style="color: #10b981;">Eq: y = ?</div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Derivative Evaluation</h3>
+                    <p>Substitute x into f'(x):</p>
+                    <div class="math-flex-box deriv-box" style="margin-top: 10px;">
+                        <span class="math-text">f'(<span id="subX">x</span>) = <span id="evalResult">?</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

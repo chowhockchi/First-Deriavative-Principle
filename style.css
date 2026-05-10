@@ -1,0 +1,61 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', sans-serif; background-color: #f1f5f9; color: #1e293b; padding: 20px; }
+.container { max-width: 1300px; margin: 0 auto; }
+.header { text-align: center; margin-bottom: 20px; }
+.header h1 { font-size: 2.5rem; color: #0f172a; }
+.header h1 span { color: #2563eb; }
+.controls-panel { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 20px; border-left: 5px solid #2563eb;}
+.input-row { display: flex; gap: 15px; align-items: center; margin-bottom: 15px; }
+.input-group input { padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; width: 100px; font-size: 1rem; }
+button { background: #2563eb; color: #fff; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-weight: bold;}
+button:hover { background: #1d4ed8; }
+.zoom-controls { margin-bottom: 15px; background: #f8fafc; padding: 10px; border-radius: 6px; }
+.action-btn { background: #64748b; font-size: 0.9rem; margin-right: 5px;}
+.action-btn:hover { background: #475569; }
+.slider-group input { width: 100%; margin-top: 10px; }
+.highlight { color: #ef4444; font-weight: bold; }
+.main-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; }
+.graph-section { background: #fff; padding: 15px; border-radius: 12px; height: 600px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.info-section { display: flex; flex-direction: column; gap: 20px; }
+.info-card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.info-card h3 { border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px; color: #0f172a;}
+.math-box { background: #f1f5f9; padding: 10px; border-radius: 6px; font-family: 'Consolas', monospace; font-size: 1.1rem; font-weight: bold; }
+.deriv-box { background: #fef2f2; border-left: 4px solid #ef4444; color: #b91c1c; }
+
+/* 💖 高级分式排版样式 💖 */
+.math-flex-box {
+    display: flex;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.math-text { margin-right: 10px; }
+
+.limit-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+    line-height: 1;
+}
+.lim-text { font-size: 1.2rem; }
+.lim-sub { font-size: 0.8rem; }
+
+.fraction-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.numerator {
+    border-bottom: 2px solid #1e293b;
+    padding: 0 8px 2px 8px;
+}
+.denominator {
+    padding: 2px 8px 0 8px;
+}
